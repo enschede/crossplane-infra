@@ -7,3 +7,5 @@ resources:
   - provider.yaml
   - aws-secret.yaml
   - provider-config.yaml
+  - db.yaml
+  -
