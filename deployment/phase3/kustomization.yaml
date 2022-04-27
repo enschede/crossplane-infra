@@ -4,7 +4,4 @@ metadata:
   name: crossplane-infra-phase3
 resources:
   - provider-config.yaml
-spec:
-  demandOn:
-    - name: crossplane-infra-phase2
 

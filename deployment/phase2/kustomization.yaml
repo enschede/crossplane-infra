@@ -5,6 +5,3 @@ metadata:
 resources:
   - provider.yaml
   - aws-secret.yaml
-spec:
-  demandOn:
-    - name: crossplane-infra-phase1
