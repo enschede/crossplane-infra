@@ -6,7 +6,3 @@ resources:
   - namespace.yaml
   - helmrepository.yaml
   - helmrelease.yaml
-  - crossplane-infra-phase1.yaml
-  - crossplane-infra-phase2.yaml
-  - crossplane-infra-phase3.yaml
-
