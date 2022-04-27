@@ -8,6 +8,6 @@ resources:
   - helmrelease.yaml
   - provider.yaml
   - aws-secret.yaml
-  - provider-config.yaml
-  - db.yaml
+#  - provider-config.yaml
+#  - db.yaml
 
