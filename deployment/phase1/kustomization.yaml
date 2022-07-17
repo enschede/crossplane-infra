@@ -6,3 +6,5 @@ resources:
   - namespace.yaml
   - helmrepository.yaml
   - helmrelease.yaml
+  - ../phase2/provider.yaml
+  - ../phase2/aws-secret.yaml

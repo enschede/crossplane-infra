@@ -3,5 +3,5 @@ kind: Kustomization
 metadata:
   name: crossplane-infra-phase2
 resources:
-  - provider.yaml
-  - aws-secret.yaml
+#  - provider.yaml
+#  - aws-secret.yaml
