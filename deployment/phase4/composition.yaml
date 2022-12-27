@@ -36,3 +36,8 @@ spec:
           toFieldPath: spec.forProvider.allocatedStorage
       readinessChecks:
       - type: None
+      connectionDetails:
+        - fromConnectionSecretKey: username
+        - fromConnectionSecretKey: password
+        - fromConnectionSecretKey: endpoint
+        - fromConnectionSecretKey: port
