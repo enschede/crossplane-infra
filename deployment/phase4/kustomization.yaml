@@ -3,4 +3,5 @@ kind: Kustomization
 metadata:
   name: crossplane-infra-phase4
 resources:
-#  - db.yaml
+  - definition.yaml
+  - composition.yaml

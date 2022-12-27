@@ -1,0 +1,38 @@
+apiVersion: apiextensions.crossplane.io/v1
+kind: Composition
+metadata:
+  name: production
+  labels:
+    crossplane.io/xrd: xpostgresqlinstances.database.example.org
+    provider: gcp
+spec:
+  writeConnectionSecretsToNamespace: crossplane-system
+  compositeTypeRef:
+    apiVersion: database.example.org/v1alpha1
+    kind: XPostgreSQLInstance
+  resources:
+    - name: cloudsqlinstance
+      base:
+        apiVersion: rds.aws.crossplane.io/v1alpha1
+        kind: DBInstance
+        spec:
+          forProvider:
+            region: us-west-2
+            dbInstanceClass: db.t2.small
+            masterUserPasswordSecretRef:
+              name: postgres-dev
+              key: password
+              namespace: springbootflux-dev
+            masterUsername: masteruser
+            allocatedStorage: 20
+            engine: postgres
+            engineVersion: "12"
+            skipFinalSnapshot: true
+            publiclyAccessible: false
+            autoMinorVersionUpgrade: true
+      patches:
+        - type: FromCompositeFieldPath
+          fromFieldPath: spec.parameters.storageGB
+          toFieldPath: spec.forProvider.allocatedStorage
+      readinessChecks:
+      - type: None
